@@ -58,3 +58,94 @@ p {
     padding-box;
   opacity: 1;
 }
+ol {
+  /* Layout Properties */
+  margin-top: 40px;
+  margin-left: 139px;
+  width: 510px;
+  height: 421px;
+  /* UI Properties */
+  opacity: 1;
+}
+ol li {
+  margin-top: 29px;
+  width: 452px;
+  height: 21px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-29)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-858585);
+  text-align: left;
+  font: normal normal 300 18px/29px Inter;
+  letter-spacing: 0px;
+  color: #858585;
+  opacity: 1;
+}
+.ex-2 {
+  margin-top: 40px;
+  margin-left: 139px;
+  margin-right: 139px;
+  width: 1088px;
+  height: 120px;
+  background: #f8f8f8 0% 0% no-repeat padding-box;
+  border: 1px solid #ededed;
+  border-radius: 10px;
+  opacity: 1;
+}
+h2 {
+  /* Layout Properties */
+  margin-top: 90px;
+  margin-left: 139px;
+  width: 1088px;
+  height: 33px;
+  font: var(--unnamed-font-style-normal) normal 300 22px /
+    var(--unnamed-line-spacing-30) var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal 300 22px/30px Inter;
+  letter-spacing: 0px;
+  color: #424242;
+  opacity: 1;
+}
+fieldset {
+  margin-top: 20px;
+  margin-left: 139px;
+  margin-right: 139px;
+  width: 1088px;
+  height: 400px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  opacity: 1;
+}
+pre {
+  margin-top: 33px;
+  margin-left: 33px;
+  margin-bottom: 33px;
+
+  width: 392px;
+  height: 334px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-30)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-007eb4);
+  text-align: left;
+  font: normal normal 300 18px/30px Inter;
+  letter-spacing: 0px;
+  color: #007eb4;
+  opacity: 1;
+}
+.ex-3 {
+  margin-top: 47px;
+  margin-left: 139;
+  width: 1032px;
+  height: 86px;
+  font: var(--unnamed-font-style-normal) normal medium
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-30)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-858585);
+  text-align: left;
+  font: normal;
+}
