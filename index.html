@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backtracking</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Backtracking</h1>
+      <p>Backtracking is a form of recursion.</p>
+      
+      <p>
+        The usual scenario is that you are faced with a number of option, and
+        you must choose one of these. After you make your choice you will get a
+        new set of options; just what set of options you get depends on what
+        choice you made. This procedure is repeated over and until you reach a
+        final state. If you made a good sequence of choices, your final state is
+        a goal state; If you didn't, it isn't.
+      </p>
+      
+      <p>
+        Conceptually, you start at the root of a tree; the tree probably has
+        some good leaves and some bad leaves, though it maybe that the leaves
+        are all good or all bad. You want to get to a good leaf. At each node,
+        beginning with the root, you choose one of its children to move to, and
+        you keep this up until you get to a leaf.
+      </p>
+      
+      <p>
+        Suppose you get to a bad leaf. You can backtrackto continue the search
+        for a good leaf by revoking your most recent choice, and trying out the
+        next option in that set of options. If you run out of options, revoke
+        the choice that got you here, and try another choice at that node. If
+        you end up at the root with no options left, there are no good leaves to
+        be found.
+      </p>
+      <br />
+      <p class="example-1">This needs an example</p>
+      <p class="img"></p>
+  </body>
+</html>

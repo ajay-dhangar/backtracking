@@ -1,0 +1,60 @@
+h1 {
+  margin-top: 52px;
+  margin-left: 139px;
+  margin-right: 139px;
+  width: 207px;
+  height: 39px;
+  font: var(--unnamed-font-style-normal) normal bold 32px/39px
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal bold 32px/39px Inter;
+  letter-spacing: 0px;
+  color: #424242;
+  opacity: 1;
+}
+p {
+  /* Layout Properties */
+  margin-top: 27px;
+  margin-left: 139px;
+  margin-right: 139px;
+  /* UI Properties */
+
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-29)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-858585);
+  text-align: left;
+  font: normal normal 300 18px/29px Inter;
+  letter-spacing: 0px;
+  color: #858585;
+  opacity: 1;
+}
+.example-1 {
+  margin-top: 40px;
+  margin-left: 139px;
+  margin-right: 139px;
+  width: 1088px;
+  height: 31px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-29)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-858585);
+  text-align: left;
+  font: normal normal 300 18px/29px Inter;
+  letter-spacing: 0px;
+  color: #858585;
+  opacity: 1;
+}
+.img {
+  margin-top: 26px;
+  margin-left: 139px;
+  margin-right: 183px;
+  width: 444px;
+  height: 233px;
+  background: transparent url("./asset/image/Image_root.png") 0% 0% no-repeat
+    padding-box;
+  opacity: 1;
+}
