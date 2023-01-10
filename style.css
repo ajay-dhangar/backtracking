@@ -311,3 +311,90 @@ ul li {
   color: #858585;
   opacity: 1;
 }
+.fie-3 {
+  margin-top: 30px;
+  margin-left: 139px;
+  width: 1088px;
+  height: 520px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  opacity: 1;
+}
+.pre-3 {
+  /* Layout Properties */
+  margin-top: 20px;
+  margin-left: 33px;
+  width: 738px;
+  height: 446px;
+  /* UI Properties */
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-30)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-007eb4);
+  text-align: left;
+  font: normal normal 300 18px/30px Inter;
+  letter-spacing: 0px;
+  color: #007eb4;
+  opacity: 1;
+}
+strong {
+  color: #424242;
+}
+.fie-4 {
+  margin-top: 25px;
+  margin-left: 139px;
+  margin-left: 139px;
+  width: 1088px;
+  height: 380px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  opacity: 1;
+}
+.pre-4 {
+  /* Layout Properties */
+  margin-top: 16px;
+  margin-left: 33px;
+
+  width: 738px;
+  height: 392px;
+  /* UI Properties */
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-30)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-007eb4);
+  text-align: left;
+  font: normal normal 300 18px/30px Inter;
+  letter-spacing: 0px;
+  color: #007eb4;
+  opacity: 1;
+}
+.fie-5 {
+  /* Layout Properties */
+  margin-top: 25px;
+  margin-left: 139px;
+  margin-right: 139px;
+  width: 1088px;
+  height: 150px;
+  /* UI Properties */
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  opacity: 1;
+}
+.pre-5 {
+  margin-left: 33px;
+  margin-top: 19px;
+  width: 738px;
+  height: 113px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-30)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-007eb4);
+  text-align: left;
+  font: normal normal 300 18px/30px Inter;
+  letter-spacing: 0px;
+  color: #007eb4;
+  opacity: 1;
+}
