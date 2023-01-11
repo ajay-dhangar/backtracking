@@ -444,14 +444,10 @@ b {
   border-radius: 10px;
   opacity: 1;
 }
-.d-t-1 {
-  margin-top: 25px;
-  margin-left: 289px;
-  width: 658px;
-  height: 139px;
-  background: transparent url("./asset/image/Image_1.jpg") 0% 0% no-repeat
-    padding-box;
-  opacity: 1;
+table,
+th,
+td {
+  border: 1px solid;
 }
 .fie-5-2 {
   height: 604px;
@@ -477,5 +473,21 @@ b {
 .fie-5_4 {
   height: 78px;
 }
+
+table {
+  margin-top: 25px;
+  margin-left: 239px;
+
+  /* UI Properties */
+  opacity: 1;
+}
+.table,
+.th {
+  border: 1px solid;
+  background-color: #ededed;
+  width: 412px;
+  height: 98px;
+}
+
 @media (max-width: 470px) {
 }
