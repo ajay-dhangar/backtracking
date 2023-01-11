@@ -59,7 +59,7 @@
           searching.)
         </p>
       </div>
-      <hr class="hr-1" />
+
       <h2>The backtracking algorithm.</h2>
       <fieldset>
         <pre>
@@ -456,7 +456,182 @@
             }
         </pre>
       </fieldset>
-      
+      <p>And here's the code for method 2:</p>
+      <fieldset class="fie-5_2">
+        <pre class="pre-5">
+            boolean explore2(int row, int column, int color) { 
+              if (row >= NUM_ROWS)return true; 
+              if (okToColor(row, column, color)) { 
+                map[row][column] = color; 
+                for (int nextColor = RED; nextColor <= BLUE; nextColor++) { 
+                  int[] next = nextRowAndColumn(row, column); 
+                  if (explore2(next[0], next[1], nextColor)) return true; 
+                } 
+              } 
+              return false; 
+            }
+        </pre>
+      </fieldset>
+      <p>
+        Those appear pretty similar, and you might think they are equally good.
+        However, the timing information suggests otherwise:
+      </p>
+      <div class="d-t-1"></div>
+      <p>
+        The zeros in the above table indicate times too short to measure (less
+        than 1 millisecond). Why this huge difference? Either of these methods
+        could have exponential growth. Eliminating a node automatically
+        eliminates all of its descendents, and this will often prevent
+        exponential growth. Conversely, by waiting to check until a leaf node is
+        reached, exponential growth is practically guaranteed. If there is any
+        way to eliminate children (reduce the set of choices), do so!
+      </p>
+      <h2>Debugging techniques</h2>
+      <p>
+        Often our first try at a program doesn't work, and we need to debug it.
+        Debuggers are helpful, but sometimes we need to fall back on inserting
+        print statements. There are some simple tricks to making effective use
+        of print statements. These tricks can be applied to any program, but are
+        especially useful when you are trying to debug recursive routines.
+      </p>
+      <p>
+        <b>Trick #1: Indent when you print method entries and exits.</b
+        ><br /><br />
+        Often, the best debugging technique is to print every method call and
+        return (or at least the most important ones). You probably want to
+        print, for each method, what parameters it came in with, and what value
+        it leaves with. However, if you just print a long list of these, it's
+        hard to match up method exits with their corresponding entries.
+        Indenting to show the level of nesting can help.
+      </p>
+      <p>
+        <b>Trick #2: Use specialized print methods for debugging. </b
+        ><br /><br />
+        Don't clutter up your actual code more than you must. Also, remember
+        that code inserted for debugging purposes can itself contain bugs, or
+        (in the worst case) can affect the results, so be very careful with it.
+      </p>
+      <p>
+        Here's our debugging code. For this trivial program, there's almost more
+        debugging code than actual code, but in larger programs the proportions
+        will be better.
+      </p>
+      <fieldset class="fie-5-2">
+        <pre class="pre-5">
+            static String indent = ""; 
+            static String name(BinaryTree node) { 
+              if (node == null) return null; 
+              else return node.name; 
+            } 
+            static void enter(BinaryTree node) { 
+              System.out.println(indent + "Entering solvable(" + name(node) + ")"); 
+              indent = indent + "| "; 
+            } 
+            static boolean yes(BinaryTree node) { 
+              indent = indent.substring(3); 
+              System.out.println(indent + "solvable(" + name(node) + ") returns true"); 
+              return true; 
+            } 
+            static boolean no(BinaryTree node) { 
+              indent = indent.substring(3); 
+              System.out.println(indent + "solvable(" + name(node) + ") returns false"); 
+            return false; 
+          }
+        </pre>
+      </fieldset>
+      <p>To use this code, we modify solvable as follows:</p>
+      <fieldset class="fie-5_1">
+        <pre class="pre-5">
+            static boolean solvable(BinaryTree node) { 
+              enter(node); 
+              if (node == null) return no(node); 
+              if (node.isGoalNode) return yes(node); 
+              if (solvable(node.leftChild)) return yes(node); 
+              if (solvable(node.rightChild)) return yes(node); 
+              return no(node); 
+            }
+        </pre>
+      </fieldset>
+      <p>And we get these results:</p>
+      <pre class="pre-5_1">
+        Entering solvable(Root) 
+        | Entering solvable(A) 
+        | | Entering solvable(C) 
+        | | | Entering solvable(null) 
+        | | | solvable(null) returns false 
+        | | | Entering solvable(null) 
+        | | | solvable(null) returns false 
+        | | solvable(C) returns false 
+        | | Entering solvable(D) 
+        | | | Entering solvable(null) 
+        | | | solvable(null) returns false 
+        | | | Entering solvable(null) 
+        | | | solvable(null) returns false 
+        | | solvable(D) returns false 
+        | solvable(A) returns false 
+        | Entering solvable(B) 
+        | | Entering solvable(E) 
+        | | solvable(E) returns true 
+        | solvable(B) returns true solvable(Root) returns true true
+      </pre>
+      <p><b>Trick #3: Never discard your debugging statements.</b></p>
+      <p>Writing debugging statements is programming, too. Often it's as much work to debug the debugging statements as it is to debug the actual program. Once your program is working, why throw this code away? <br><br>
+        Obviously, you don't want to print out all this debugging information from a program you are ready to submit (or to turn over to your manager). You could comment out your debugging calls, but that can be a lot of work. What's more, in the above example, you would have to replace every return(yes(node)) with return(true), and every return(no(node)) with return false. With all these changes, you might introduce new bugs into your program. <br><br>
+        The simple solution is to make your debugging statements conditional. For example,</p>
+        <fieldset class="fie-5-3">
+        <pre class="pre-5">
+            static final boolean debugging = false; 
+            static void enter(BinaryTree node) { 
+              if (debugging) { 
+                System.out.println(indent + "Entering solvable(" + name(node) + ")"); 
+                indent = indent + "| "; 
+              } 
+            } 
+            static boolean yes(BinaryTree node) { 
+              if (debugging) { 
+                indent = indent.substring(3); 
+                System.out.println(indent + "solvable(" + name(node) + ") returns true"); 
+              } 
+              return true; 
+            } 
+            static boolean no(BinaryTree node) { 
+              if (debugging) { 
+                indent = indent.substring(3); 
+                System.out.println(indent + "solvable(" + name(node) + ") returns false"); 
+              } 
+              return false; 
+            }
+        </pre>
+      </fieldset>
+      <p>In industry, actual programs often have multiple flags to control different aspects of debugging. Don't worry too much about making your code larger; modern compilers will notice that since the variable debugging is final, it can never be true, and the controlled code will be discarded.</p>
+      <p>
+        <b>
+          Trick #4: Create an Exception.
+        </b>
+      </p>
+      <p>
+        If an Exception is thrown, you can get information about just where it happened by sending it the message printStackTrace(PrintStream). Since an Exception is an object like any other, you can create and throw your own Exceptions. However, Java programmers don't always realize that you can create an Exception without throwing it. For example, the following code
+      </p>
+       <fieldset class="fie-5_4">
+        <pre class="pre-5">
+            new Exception("Checkpoint Charlie").printStackTrace(System.out);
+        </pre>
+      </fieldset>
+    <p>
+      will print out a message something like this, and the program will then continue normally. That is, the above code just acts like a print statement.
+    </p>
+    <fieldset class="fie-5_1" style="height: 220px;">
+        <pre class="pre-5">
+            java.lang.Exception: Checkpoint Charlie 
+            at TreeSearch.solvable(TreeSearch.java:53) 
+            at TreeSearch.solvable(TreeSearch.java:57) 
+            at TreeSearch.main(TreeSearch.java:72) 
+            at __SHELL38.run(__SHELL38.java:16) 
+            at bluej.runtime.ExecServer.suspendExecution(Unknown Source)
+        </pre>
+      </fieldset>
+      <!-- <hr class="hr-1">-->
+
     </div>
   </body>
 </html>

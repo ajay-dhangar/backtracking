@@ -146,7 +146,7 @@ fieldset {
   margin-top: 20px;
   margin-left: 139px;
   margin-right: 139px;
-  width: 1088px;
+  width: 108px;
   height: 400px;
   border: 1px solid #d8d8d8;
   border-radius: 10px;
@@ -156,7 +156,6 @@ pre {
   margin-top: 33px;
   margin-left: 33px;
   margin-bottom: 33px;
-
   width: 392px;
   height: 334px;
   font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
@@ -189,11 +188,6 @@ pre {
   color: var(--unnamed-color-#858585);
   text-align: left;
   font: normal;
-}
-.hr-1 {
-  margin-left: 139px;
-  margin-right: 139px;
-  color: var(--unnamed-color-#858585);
 }
 /*
 h3 {
@@ -249,8 +243,7 @@ ul li {
 .fie-1 {
   margin-top: 30px;
   margin-left: 139px;
-  margin-right: 139px;
-  width: 1088px;
+  width: 108px;
   height: 176px;
   border: 1px solid #d8d8d8;
   border-radius: 10px;
@@ -314,7 +307,7 @@ ul li {
 .fie-3 {
   margin-top: 30px;
   margin-left: 139px;
-  width: 1088px;
+
   height: 520px;
   border: 1px solid #d8d8d8;
   border-radius: 10px;
@@ -345,7 +338,7 @@ strong {
   margin-top: 25px;
   margin-left: 139px;
   margin-left: 139px;
-  width: 1088px;
+
   height: 380px;
   border: 1px solid #d8d8d8;
   border-radius: 10px;
@@ -375,7 +368,7 @@ strong {
   margin-top: 25px;
   margin-left: 139px;
   margin-right: 139px;
-  width: 1088px;
+
   height: 150px;
   /* UI Properties */
   border: 1px solid #d8d8d8;
@@ -399,7 +392,6 @@ strong {
   opacity: 1;
 }
 .fie-5_1 {
-  width: 1088px;
   height: 264px;
   border: 1px solid #d8d8d8;
   border-radius: 10px;
@@ -447,11 +439,43 @@ b {
   color: #424242;
 }
 .fie-5_2 {
-  width: 1088px;
   height: 364px;
   border: 1px solid #d8d8d8;
   border-radius: 10px;
   opacity: 1;
+}
+.d-t-1 {
+  margin-top: 25px;
+  margin-left: 289px;
+  width: 658px;
+  height: 139px;
+  background: transparent url("./asset/image/Image_1.jpg") 0% 0% no-repeat
+    padding-box;
+  opacity: 1;
+}
+.fie-5-2 {
+  height: 604px;
+}
+.pre-5_1 {
+  margin-top: 25px;
+  margin-left: 139px;
+
+  height: 614px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-29)
+    var(--unnamed-font-family-inter);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-858585);
+  text-align: left;
+  font: normal normal 300 18px/30px Inter;
+
+  text-align: l;
+}
+.fie-5-3 {
+  height: 680px;
+}
+.fie-5_4 {
+  height: 78px;
 }
 @media (max-width: 470px) {
 }
