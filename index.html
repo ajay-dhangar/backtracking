@@ -476,24 +476,24 @@
         Those appear pretty similar, and you might think they are equally good.
         However, the timing information suggests otherwise:
       </p>
-      <table>
+      <table class="table-1">
         <tr>
-          <td></td>
-          <td style="background-color: #edededc5;">2 by 3 map</td>
-          <td style="background-color: #edededc5;">3 by 3 map</td>
-          <td style="background-color: #edededc5;">3 by 4 map</td>
+          <td class="td-1"></td>
+          <td class="td-1" style="background-color: #edededc5">2 by 3 map</td>
+          <td class="td-1" style="background-color: #edededc5">3 by 3 map</td>
+          <td class="td-1" style="background-color: #edededc5">3 by 4 map</td>
         </tr>
         <tr>
-          <td style="background-color: #edededc5;">Mathod 1:</td>
-          <td>60 ms.</td>
-          <td>940 ms.</td>
-          <td>60530 ms. (1 minute)</td>
+          <td class="td-1" style="background-color: #edededc5">Mathod 1:</td>
+          <td class="td-1">60 ms.</td>
+          <td class="td-1">940 ms.</td>
+          <td class="td-1">60530 ms. (1 minute)</td>
         </tr>
         <tr>
-          <td style="background-color: #edededc5;">Mathod 2:</td>
-          <td>0 ms.</td>
-          <td>0 ms.</td>
-          <td>0 ms.</td>
+          <td class="td-1" style="background-color: #edededc5">Mathod 2:</td>
+          <td class="td-1">0 ms.</td>
+          <td class="td-1">0 ms.</td>
+          <td class="td-1">0 ms.</td>
         </tr>
       </table>
       <p>
@@ -682,15 +682,259 @@
         one end (say, the left), the white marbles all at the other end, and a
         free space in between.
       </p>
-      <table class="table">
+      <table class="table-2">
         <tr>
-          <th class="th"><img src="./asset/image/black-ball.png" alt="" /></th>
-          <th class="th"><img src="./asset/image/black-ball.png" alt="" /></th>
-          <th class="th" style="width: 1000px"></th>
-          <th class="th"><img src="./asset/image/white-ball.png" alt="" /></th>
-          <th class="th"><img src="./asset/image/white-ball.png" alt="" /></th>
+          <th class="th-2">
+            <img src="./asset/image/black-ball.png" alt="" />
+          </th>
+          <th class="th-2">
+            <img src="./asset/image/black-ball.png" alt="" />
+          </th>
+          <th class="th-2" style="width: 20%"></th>
+          <th class="th-2">
+            <img src="./asset/image/white-ball.png" alt="" />
+          </th>
+          <th class="th-2">
+            <img src="./asset/image/white-ball.png" alt="" />
+          </th>
         </tr>
       </table>
+      <p>The goal is to reverse the positions of the marbles:</p>
+      <table class="table-2">
+        <tr>
+          <th class="th-2">
+            <img src="./asset/image/white-ball.png" alt="" />
+          </th>
+          <th class="th-2">
+            <img src="./asset/image/white-ball.png" alt="" />
+          </th>
+          <th class="th-2" style="width: 20%"></th>
+          <th class="th-2">
+            <img src="./asset/image/black-ball.png" alt="" />
+          </th>
+          <th class="th-2">
+            <img src="./asset/image/black-ball.png" alt="" />
+          </th>
+        </tr>
+      </table>
+      <p style="color: #424242">
+        The black marbles can only move to the right, and the white marbles can
+        only move to the left (no backing up). At each move, a marble can
+        either:
+      </p>
+      <ul>
+        <li>Move one space ahead, if that space is clear, or</li>
+        <li>
+          Jump ahead over exactly one marble of the opposite color, if the space
+          just beyond that marble is clear.
+        </li>
+      </ul>
+      <p>For example, you could make the following sequence of moves:</p>
+      <!-- Starting position -->
+      <table class="table-3">
+        <tr>
+          <th><b>Starting Position:</b></th>
+          <td>
+            <table class="table-2" style="margin-left: 45px">
+              <tr>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2" style="width: 20%"></th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!--Black moves ahead -->
+      <table class="table-3">
+        <tr>
+          <th><b>Black moves ahead:</b></th>
+          <td>
+            <table class="table-2" style="margin-left: 30px">
+              <tr>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2" style="width: 20%"></th>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- White jumps -->
+      <table class="table-3">
+        <tr>
+          <th><b>White jumps:</b></th>
+          <td>
+            <table class="table-2" style="margin-left: 75px">
+              <tr>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2" style="width: 20%"></th>
+
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!--Black moves ahead -->
+      <table class="table-3">
+        <tr>
+          <th><b>Black moves ahead:</b></th>
+          <td>
+            <table class="table-2" style="margin-left: 30px">
+              <tr>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+                <th class="th-2" style="width: 20%"></th>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- Black jumps-->
+      <table class="table-3">
+        <tr>
+          <th><b>Black jumps:</b></th>
+          <td>
+            <table class="table-2" style="margin-left: 75px">
+              <tr>
+                <th class="th-2" style="width: 20%"></th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- White moves ahead-->
+      <table class="table-3">
+        <tr>
+          <th><b>Black moves ahead:</b></th>
+          <td>
+            <table class="table-2" style="margin-left: 30px">
+              <tr>
+                <th class="th-2" style="width: 20%"></th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/black-ball.png" alt="" />
+                </th>
+                <th class="th-2">
+                  <img src="./asset/image/white-ball.png" alt="" />
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- Stuck! -->
+      <table class="table-3">
+        <tr>
+          <th><b>Stuck!</b></th>
+        </tr>
+      </table>
+      <p>
+        The backtracking method is named solvable and returns a boolean. In
+        solvable we shall need to check whether we are at a leaf, which in this
+        case means a position from which no further moves are possible. This
+        isn't so easy. <br><br>
+        
+        Now to the program. The main program will initialize the
+        board, and call a recursive backtracking routine to attempt to solve the
+        puzzle. The backtracking routine will either succeed and print out a
+        winning path, or it will fail, and the main program will have to print
+        out the bad news. <br><br>
+        
+        The backtracking method is named solvable and returns
+        a boolean. In solvable we shall need to check whether we are at a leaf,
+        which in this case means a position from which no further moves are
+        possible. This isn't so easy. <br><br>
+        
+        Each possible move will result in a new
+        board position, and these new board positions are the children of the
+        current board position. Hence to find the children of a node (that is,
+        of a board position), we need only find the possible moves from that
+        node. Remember that it is also highly desirable to find an ordering on
+        these possible moves. <br>
+        <br>
+        Here it is time to stop and take thought. To make
+        progress, we must analyze the game to some extent. Probably a number of
+        approaches would work, and what follows is based on the way I worked it
+        out. If you were to program this puzzle, you might find a different but
+        equally valid approach. <br><br>
+        
+        First, notice that if a marble has a move, that
+        move is unique: if it can move ahead one square, then it cannot jump. If
+        it can jump, it cannot move ahead one square. This suggests that, to
+        find the possible moves, we might assign numbers to the marbles, and
+        check each marble in turn. When we have looked at all the marbles, we
+        have looked at all the possible moves. This would require having a table
+        to keep track of where each marble is, or else somehow "marking" each
+        marble with its number and searching the board each time to find the
+        marble we want. Neither alternative is very attractive. <br><br>
+        
+        Next, notice that for a given board position, each marble occupies a unique space.
+        Hence, instead of talking about moving a particular marble, we can talk
+        about moving the marble in a particular space. If a move is possible
+        from a given space, then that must be the only move possible from that
+        space, because if the marble in that space has a move, it is unique.
+        There is a slight complication because not every space contains a
+        marble, but at least the spaces (unlike the marbles) stay in one place.
+      </p>
     </div>
   </body>
 </html>
