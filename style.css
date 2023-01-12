@@ -495,3 +495,8 @@ b {
 .table-3 {
   margin-left: 179px;
 }
+.td-b {
+  font-weight: bold;
+  color: #424242;
+  padding: 5px;
+}

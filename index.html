@@ -953,18 +953,20 @@
           or jump to the left.
         </li>
       </ul>
-      <p style="margin-top: 57px;">
-        We write another method <strong> int[] makeMove(int[] oldBoard, int position)</strong>
-        that will take a board and a position, make a move from that position,
-        and return as its value a new board. (We could write this somewhat more
-        efficiently by changing the old board, rather than creating a new one,
-        but here we are more concerned with simplicity.) In technical jargon,
-        makeMove is "applicative" rather than "mutative." <br><br>
-        Along with <strong>canMove and makeMove,</strong> we are using methods <strong>puzzleSolved and printBoard </strong> with meanings
-        that should be obvious. With these methods, our central backtracking
-        method can be written as follows:
+      <p style="margin-top: 57px">
+        We write another method
+        <strong> int[] makeMove(int[] oldBoard, int position)</strong> that will
+        take a board and a position, make a move from that position, and return
+        as its value a new board. (We could write this somewhat more efficiently
+        by changing the old board, rather than creating a new one, but here we
+        are more concerned with simplicity.) In technical jargon, makeMove is
+        "applicative" rather than "mutative." <br /><br />
+        Along with <strong>canMove and makeMove,</strong> we are using methods
+        <strong>puzzleSolved and printBoard </strong> with meanings that should
+        be obvious. With these methods, our central backtracking method can be
+        written as follows:
       </p>
-      <fieldset class="fie-5_1" style="height: 510px;">
+      <fieldset class="fie-5_1" style="height: 510px">
         <pre class="pre-5">
             boolean solvable(int[] board) { 
               if (puzzleSolved(board)) { 
@@ -984,6 +986,248 @@
               }
         </pre>
       </fieldset>
+      <p>
+        Along with canMove and makeMove, we are using methods puzzleSolved and
+        printBoard with meanings that should be obvious. <br /><br />
+        Here is some output from the program:
+      </p>
+      <ol reversed="16">
+        <!-- List-1 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-2 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-3 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-4 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-5 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-6 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">BLACK</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-7 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">_____</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-8 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-9 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-10 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">_____</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-11 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-12 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-13 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-14 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-15 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+        <!-- List-16 -->
+        <li>
+          <table>
+            <tr>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">BLACK</td>
+              <td class="td-b">_____</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+              <td class="td-b">WHITE</td>
+            </tr>
+          </table>
+        </li>
+      </ol>
+      <br />      
     </div>
+    <div class="ex-2" style="margin-top: 373px;">
+        <p class="ex-3">
+          Notice that the solution is given in reverse order: BLACK starts out
+          on the left and WHITE on the right, as in the last line. I've added
+          line numbers to the actual output in order to emphasize this point.
+          Backtracking always produces its results (sequence of choices) in
+          reverse order; it is up to you, the programmer, to reverse the results
+          again to get them in the correct order.
+        </p>
+      </div>
   </body>
 </html>
