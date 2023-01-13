@@ -491,12 +491,11 @@ b {
   width: 412px;
   height: 78px;
 }
-
-.table-3 {
-  margin-left: 179px;
+.b-c li {
+  color: #007eb4;
 }
-.td-b {
-  font-weight: bold;
+.pre-words {
+  margin-left: 2px;
   color: #424242;
-  padding: 5px;
+  font-weight: bold;
 }
