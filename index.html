@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="Ex-1">
+    
       <h1>Backtracking</h1>
       <p>Backtracking is a form of recursion.</p>
       <p>
@@ -37,7 +37,7 @@
       </p>
       <br />
       <p class="example-1">This needs an example</p>
-      <p class="img"></p>
+      <img src="./asset/image/Image_root.png" alt="">
       <ol type="1">
         <li>Starting at Root, your options are A and B. You choose A.</li>
         <li>At A, your options are C and D. You choose C.</li>
@@ -50,7 +50,7 @@
         <li>E is good. Congratulations!</li>
       </ol>
       <div class="ex-2">
-        <p class="ex-3">
+        <p>
           In this example we drew a picture of a tree. The tree is an abstract
           model of the possible sequences of choices we could make. There is
           also a data structure called a tree, but usually we don't have a data
@@ -60,7 +60,7 @@
         </p>
       </div>
 
-      <h2>The backtracking algorithm.</h2>
+      <h2><b>The backtracking algorithm.</b></h2>
       <fieldset>
         <pre>
             boolean solve(Node n) { 
@@ -87,7 +87,7 @@
           to any goal node.
         </p>
       </div>
-      <h2>How does this work?</h2>
+      <h2><b>How does this work?</b></h2>
       <ul>
         <li>If any child of n is solvable, then n is solvable.</li>
         <li>If no child of n is solvable, then n is not solvable.</li>
@@ -106,14 +106,14 @@
             return false
         </pre>
       </fieldset>
-      <p class="ab">
+      <p>
         Eventually the recursion will "bottom" out at a leaf node. If the leaf
         node is a goal node, it is solvable; if the leaf node is not a goal
         node, it is not solvable. This is our base case. In the above code, this
         is done by the lines
       </p>
       <fieldset class="fie-1">
-        <pre class="pre-2">
+        <pre style="margin-left: -7%;">
             if n is a leaf node { 
               if the leaf is a goal node, return true 
               else return false 
@@ -124,25 +124,25 @@
         The backtracking algorithm is simple but important. You should
         understand it thoroughly. Another way of stating it is as follows:
       </p>
-      <h2>To search a tree:</h2>
-      <ol class="ol-1">
-        <li class="li-1">
+      <h2><b>To search a tree:</b></h2>
+      <ol style="width: 70%; height: 10%;">
+        <li style="width: 100%; height: 10%;">
           If the tree consists of a single leaf, test whether it is a goal node.
         </li>
-        <li class="li-1">
+        <li style="width: 100%; height: 10%;">
           Otherwise, search the subtrees until you find one containing a goal
           node, or until you have searched them all unsuccessfully.
         </li>
       </ol>
-      <h2>Non-recursive backtracking, using a stack</h2>
+      <h2><b>Non-recursive backtracking, using a stack</b></h2>
       <p>
         Backtracking is a rather typical recursive algorithm, and any recursive
         algorithm can be rewritten as a stack algorithm. In fact, that is how
         your recursive algorithms are translated into machine or assembly
         language.
       </p>
-      <fieldset class="fie-3">
-        <pre class="pre-3">
+      <fieldset style="height: 500px; width: 395px; margin-left: 39px;">
+        <pre style="margin-left: -16%; ">
             boolean solve(Node n) { 
               put node n on the stack; 
               while the stack is not empty { 
@@ -184,8 +184,8 @@
         Here is the recursive backtracking algorithm, modified slightly to print
         (in reverse order) the nodes along the successful path:
       </p>
-      <fieldset class="fie-3">
-        <pre class="pre-3">
+      <fieldset style="height: 520px;">
+        <pre>
             boolean solve(Node n) { 
               if n is a leaf node { 
                 if the leaf is a goal node { 
@@ -204,7 +204,7 @@
               }
         </pre>
       </fieldset>
-      <h2>Keeping backtracking simple</h2>
+      <h2><b>Keeping backtracking simple</b></h2>
       <p>
         All of these versions of the backtracking algorithm are pretty simple,
         but when applied to a real problem, they can get pretty cluttered up
@@ -272,7 +272,7 @@
         use it; but if it is too cumbersome, you are better off keeping a list
         of untried children.
       </p>
-      <h2>Example: Tree Search</h2>
+      <h2><b>Example: Tree Search</b></h2>
       <p>
         For starters, let's do the simplest possible example of backtracking,
         which is searching an actual tree. We will also use the simplest kind of
@@ -290,13 +290,14 @@
         we repeat here) shows a binary tree.
       </p>
       <p>Here's a definition of the BinaryTree class:</p>
-      <fieldset class="fie-4">
-        <pre class="pre-4">
+      <fieldset style="width: 380px;">
+        <pre style="margin-left: -10%;">
             public class BinaryTree { 
               BinaryTree leftChild = null; 
               BinaryTree rightChild = null; 
               boolean isGoalNode = false; String name; 
-              BinaryTree(String name, BinaryTree left, BinaryTree right, boolean isGoalNode) { 
+              BinaryTree(String name, BinaryTree left,
+               BinaryTree right, boolean isGoalNode) { 
                 this.name = name; 
                 leftChild = left; 
                 rightChild = right; 
@@ -309,8 +310,8 @@
         Next we will create a TreeSearch class, and in it we will define a
         method makeTree() which constructs the above binary tree.
       </p>
-      <fieldset class="fie-4">
-        <pre class="pre-4">
+      <fieldset style="width: 370px;">
+        <pre style="margin-left: -8%;">
             static BinaryTree makeTree() { 
               BinaryTree root, a, b, c, d, e, f; 
               c = new BinaryTree("C", null, null, false); 
@@ -325,8 +326,8 @@
         </pre>
       </fieldset>
       <p>Here's a main program to create a binary tree and try to solve it:</p>
-      <fieldset class="fie-5">
-        <pre class="pre-5">
+      <fieldset style="height: 170px;">
+        <pre style="margin-left: -8%;">
             public static void main(String args[]) { 
               BinaryTree tree = makeTree(); 
               System.out.println(solvable(tree)); 
@@ -337,34 +338,38 @@
         And finally, here's the recursive backtracking routine to "solve" the
         binary tree by finding a goal node.
       </p>
-      <fieldset class="fie-5_1">
-        <pre class="pre-5">
+      <fieldset>
+        <pre style="margin-left: -12%;">
             static boolean solvable(BinaryTree node) { 
-              /* 1 */ if (node == null) return false; 
-              /* 2 */ if (node.isGoalNode) return true; 
-              /* 3 */ if (solvable(node.leftChild)) return true; 
-              /* 4 */ if (solvable(node.rightChild)) return true; 
+              /* 1 */ if (node == null) 
+                          return false; 
+              /* 2 */ if (node.isGoalNode) 
+                          return true; 
+              /* 3 */ if (solvable(node.leftChild)) 
+                          return true; 
+              /* 4 */ if (solvable(node.rightChild)) 
+                        return true; 
               /* 5 */ return false; 
             }
         </pre>
       </fieldset>
       <p>Here's what the numbered lines are doing:</p>
-      <ol class="or-1">
-        <li class="or-li-1">
+      <ol style="width: 70%; height: 10%;">
+        <li>
           If we are given a null node, it's not solvable. This statement is so
           that we can call this method with the children of a node, without
           first checking whether those children actually exist.
         </li>
-        <li class="or-li-1">
+        <li>
           If the node we are given is a goal node, return success.
         </li>
-        <li class="or-li-1">
+        <li>
           See if the left child of node is solvable, and if so, conclude that
           node is solvable. We will only get to this line if node is non-null
           and is not a goal node, says to
         </li>
-        <li class="or-li-1">Do the same thing for the right child.</li>
-        <li class="or-li-1">
+        <li>Do the same thing for the right child.</li>
+        <li>
           Since neither child of node is solvable, node itself is not solvable.
         </li>
       </ol>
@@ -378,8 +383,8 @@
         alternative would be to check first whether each child exists, and recur
         only if they do. Here's that alternative version:
       </p>
-      <fieldset class="fie-5_1">
-        <pre class="pre-5">
+      <fieldset style="width: 388px; margin-left: 59px;height: 300px;">
+        <pre style="margin-left: -14%; font-size: 17px;">
             static boolean solvable(BinaryTree node) { 
               if (node.isGoalNode) return true; 
               if (node.leftChild != null && solvable(node.leftChild)) 
@@ -394,7 +399,7 @@
         I think the first version is simpler, but the second version is slightly
         more efficient.
       </p>
-      <h2>What are the children?</h2>
+      <h2><b>What are the children?</b></h2>
       <p>
         One of the things that simplifies the above binary tree search is that,
         at each choice point, you can ignore all the previous choices. Previous
@@ -414,12 +419,12 @@
         for the second country, and so on, until all countries are colored.
       </p>
       <p>There are two ways to do this:</p>
-      <ul class="ul-1">
-        <li class="ul-li-1">
+      <ul style="margin-left: -29px;">
+        <li style="width: 85%; height: 10%;">
           Method 1. Try each of the four possible colors, and recur. When you
           run out of countries, check whether you are at a goal node.
         </li>
-        <li class="ul-li-1">
+        <li style="width: 85%; height: 10%;">
           Method 2. Try only those colors that have not already been used for an
           adjacent country, and recur. If and when you run out of countries, you
           have successfully colored the map.
@@ -441,8 +446,8 @@
         column of the next square on the checkerboard).
       </p>
       <p>Here's the code for method 1:</p>
-      <fieldset class="fie-5_2">
-        <pre class="pre-5">
+      <fieldset style="width: 390px; margin-left: 49px;">
+        <pre style="margin-left: -14%;">
             boolean explore1(int row, int column, int color) { 
               if (row >= NUM_ROWS)return mapIsOK(); 
               map[row][column] = color; 
@@ -457,15 +462,16 @@
         </pre>
       </fieldset>
       <p>And here's the code for method 2:</p>
-      <fieldset class="fie-5_2">
-        <pre class="pre-5">
+      <fieldset style="width: 390px; margin-left: 49px;">
+        <pre style="margin-left: -14%;">
             boolean explore2(int row, int column, int color) { 
               if (row >= NUM_ROWS)return true; 
               if (okToColor(row, column, color)) { 
                 map[row][column] = color; 
-                for (int nextColor = RED; nextColor <= BLUE; nextColor++) { 
+                for(int nextColor=RED;
+                nextColor <=BLUE; nextColor++){ 
                   int[] next = nextRowAndColumn(row, column); 
-                  if (explore2(next[0], next[1], nextColor)) return true; 
+                  if (explore2(next[0],next[1],nextColor)) return true; 
                 } 
               } 
               return false; 
@@ -505,7 +511,7 @@
         reached, exponential growth is practically guaranteed. If there is any
         way to eliminate children (reduce the set of choices), do so!
       </p>
-      <h2>Debugging techniques</h2>
+      <h2><b>Debugging techniques</b></h2>
       <p>
         Often our first try at a program doesn't work, and we need to debug it.
         Debuggers are helpful, but sometimes we need to fall back on inserting
@@ -535,32 +541,35 @@
         debugging code than actual code, but in larger programs the proportions
         will be better.
       </p>
-      <fieldset class="fie-5-2">
-        <pre class="pre-5">
+      <fieldset style="height: 700px; width: 380px;">
+        <pre style="margin-left: -14%;">
             static String indent = ""; 
             static String name(BinaryTree node) { 
               if (node == null) return null; 
               else return node.name; 
             } 
             static void enter(BinaryTree node) { 
-              System.out.println(indent + "Entering solvable(" + name(node) + ")"); 
+              System.out.println(indent + 
+              "Entering solvable(" + name(node) + ")"); 
               indent = indent + "| "; 
             } 
             static boolean yes(BinaryTree node) { 
               indent = indent.substring(3); 
-              System.out.println(indent + "solvable(" + name(node) + ") returns true"); 
+              System.out.println(indent + 
+              "solvable(" + name(node) + ") returns true"); 
               return true; 
             } 
             static boolean no(BinaryTree node) { 
               indent = indent.substring(3); 
-              System.out.println(indent + "solvable(" + name(node) + ") returns false"); 
+              System.out.println(indent + 
+              "solvable(" + name(node) + ") returns false"); 
             return false; 
           }
         </pre>
       </fieldset>
       <p>To use this code, we modify solvable as follows:</p>
-      <fieldset class="fie-5_1">
-        <pre class="pre-5">
+      <fieldset style="width: 380px; height: 300px;">
+        <pre style="margin-left: -12%;">
             static boolean solvable(BinaryTree node) { 
               enter(node); 
               if (node == null) return no(node); 
@@ -593,7 +602,7 @@
         | | solvable(E) returns true 
         | solvable(B) returns true solvable(Root) returns true true
       </pre>
-      <p><b>Trick #3: Never discard your debugging statements.</b></p>
+      <p style="margin-top: 260px;"><b>Trick #3: Never discard your debugging statements.</b></p>
       <p>
         Writing debugging statements is programming, too. Often it's as much
         work to debug the debugging statements as it is to debug the actual
@@ -609,26 +618,29 @@
         The simple solution is to make your debugging statements conditional.
         For example,
       </p>
-      <fieldset class="fie-5-3">
-        <pre class="pre-5">
+      <fieldset style="height: 780px; width: 380px;">
+        <pre style="margin-left: -14%;">
             static final boolean debugging = false; 
             static void enter(BinaryTree node) { 
               if (debugging) { 
-                System.out.println(indent + "Entering solvable(" + name(node) + ")"); 
+                System.out.println(indent + 
+                "Entering solvable(" + name(node) + ")"); 
                 indent = indent + "| "; 
               } 
             } 
             static boolean yes(BinaryTree node) { 
               if (debugging) { 
                 indent = indent.substring(3); 
-                System.out.println(indent + "solvable(" + name(node) + ") returns true"); 
+                System.out.println(indent + 
+                "solvable(" + name(node) + ") returns true"); 
               } 
               return true; 
             } 
             static boolean no(BinaryTree node) { 
               if (debugging) { 
                 indent = indent.substring(3); 
-                System.out.println(indent + "solvable(" + name(node) + ") returns false"); 
+                System.out.println(indent + 
+                "solvable(" + name(node) + ") returns false"); 
               } 
               return false; 
             }
@@ -652,8 +664,8 @@
         can create an Exception without throwing it. For example, the following
         code
       </p>
-      <fieldset class="fie-5_4">
-        <pre class="pre-5">
+      <fieldset style="height: 80px; width: 420px; margin-left: 29px;">
+        <pre style="margin-left: -14%;font-size: 16px;">
             new Exception("Checkpoint Charlie").printStackTrace(System.out);
         </pre>
       </fieldset>
@@ -662,18 +674,19 @@
         continue normally. That is, the above code just acts like a print
         statement.
       </p>
-      <fieldset class="fie-5_1" style="height: 220px">
-        <pre class="pre-5">
+      <fieldset  style="height: 240px; width: 410px; margin-left: 39px;">
+        <pre style="margin-left: -14%;">
             java.lang.Exception: Checkpoint Charlie 
             at TreeSearch.solvable(TreeSearch.java:53) 
             at TreeSearch.solvable(TreeSearch.java:57) 
             at TreeSearch.main(TreeSearch.java:72) 
             at __SHELL38.run(__SHELL38.java:16) 
-            at bluej.runtime.ExecServer.suspendExecution(Unknown Source)
+            at bluej.runtime.ExecServer.suspendExecution(Unknown 
+            Source)
         </pre>
       </fieldset>
       <!-- <hr class="hr-1">-->
-      <h2>Example: Cindy's Puzzle</h2>
+      <h2><b>Example: Cindy's Puzzle</b></h2>
       <p>
         I call the following puzzle "Cindy's puzzle" for historical reasons. You
         have some number n of black marbles and the same number of white
@@ -684,205 +697,141 @@
       </p>
       <table class="table-2">
         <tr>
-          <th class="th-2">
-            <img src="./asset/image/black-ball.png" alt="" />
-          </th>
-          <th class="th-2">
-            <img src="./asset/image/black-ball.png" alt="" />
-          </th>
-          <th class="th-2" style="width: 20%"></th>
-          <th class="th-2">
-            <img src="./asset/image/white-ball.png" alt="" />
-          </th>
-          <th class="th-2">
-            <img src="./asset/image/white-ball.png" alt="" />
-          </th>
-        </tr>
+          <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+          <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+          <td class="td-2" style="width: 20%;"></td>
+          <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+          <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+        </tr>        
       </table>
       <p>The goal is to reverse the positions of the marbles:</p>
       <table class="table-2">
         <tr>
-          <th class="th-2">
-            <img src="./asset/image/white-ball.png" alt="" />
-          </th>
-          <th class="th-2">
-            <img src="./asset/image/white-ball.png" alt="" />
-          </th>
-          <th class="th-2" style="width: 20%"></th>
-          <th class="th-2">
-            <img src="./asset/image/black-ball.png" alt="" />
-          </th>
-          <th class="th-2">
-            <img src="./asset/image/black-ball.png" alt="" />
-          </th>
-        </tr>
+          <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+          <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+          <td class="td-2" style="width: 20%;"></td>
+          <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+          <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+        </tr>        
       </table>
       <p style="color: #424242">
         The black marbles can only move to the right, and the white marbles can
         only move to the left (no backing up). At each move, a marble can
         either:
       </p>
-      <ul>
-        <li>Move one space ahead, if that space is clear, or</li>
-        <li>
+      <ul style="margin-left: -19px;">
+        <li style="height: 10%; width: 90%;">Move one space ahead, if that space is clear, or</li>
+        <li style="height: 10%; width: 90%;">
           Jump ahead over exactly one marble of the opposite color, if the space
           just beyond that marble is clear.
         </li>
       </ul>
       <p>For example, you could make the following sequence of moves:</p>
       <!-- Starting position -->
-      <table class="table-3">
+      <table class="table-3" style="margin-left: 49px;">
         <tr>
-          <th><b>Starting Position:</b></th>
+          <td><b>Starting Position:</b></td>
           <td>
-            <table class="table-2" style="margin-left: 45px">
+            <table class="table-2">
               <tr>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2" style="width: 20%"></th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-              </tr>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+              </tr>        
             </table>
           </td>
         </tr>
       </table>
       <!--Black moves ahead -->
-      <table class="table-3">
+      <table class="table-3"style="margin-left: 49px;">
         <tr>
-          <th><b>Black moves ahead:</b></th>
+          <td><b>Black moves ahead:</b></td>
           <td>
-            <table class="table-2" style="margin-left: 30px">
+            <table class="table-2" style="margin-left: 35px;">
               <tr>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2" style="width: 20%"></th>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-              </tr>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+              </tr>        
             </table>
           </td>
+          
         </tr>
       </table>
       <!-- White jumps -->
-      <table class="table-3">
+      <table class="table-3" style="margin-left: 49px;">
         <tr>
-          <th><b>White jumps:</b></th>
+          <td><b>White jumps:</b></td>
           <td>
-            <table class="table-2" style="margin-left: 75px">
+            <table class="table-2" style="margin-left: 78px;">
               <tr>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2" style="width: 20%"></th>
-
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-              </tr>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+              </tr>        
             </table>
           </td>
         </tr>
       </table>
       <!--Black moves ahead -->
-      <table class="table-3">
+      <table class="table-3" style="margin-left: 49px;">
         <tr>
-          <th><b>Black moves ahead:</b></th>
+          <td><b>Black moves ahead:</b></td>
           <td>
-            <table class="table-2" style="margin-left: 30px">
+            <table class="table-2" style="margin-left: 35px;">
               <tr>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-                <th class="th-2" style="width: 20%"></th>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-              </tr>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+              </tr>        
             </table>
           </td>
         </tr>
       </table>
       <!-- Black jumps-->
-      <table class="table-3">
+      <table class="table-3" style="margin-left: 49px;">
         <tr>
-          <th><b>Black jumps:</b></th>
+          <td><b>Black jumps:</b></td>
           <td>
-            <table class="table-2" style="margin-left: 75px">
+            <table class="table-2" style="margin-left: 78px;">
               <tr>
-                <th class="th-2" style="width: 20%"></th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-              </tr>
+                <td class="td-2" style="width: 20%;"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+              </tr>        
             </table>
           </td>
         </tr>
       </table>
       <!-- White moves ahead-->
-      <table class="table-3">
+      <table class="table-3" style="margin-left: 49px;">
         <tr>
-          <th><b>Black moves ahead:</b></th>
+          <td><b>Black moves ahead:</b></td>
           <td>
-            <table class="table-2" style="margin-left: 30px">
+            <table class="table-2" style="margin-left: 32px;">
               <tr>
-                <th class="th-2" style="width: 20%"></th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/black-ball.png" alt="" />
-                </th>
-                <th class="th-2">
-                  <img src="./asset/image/white-ball.png" alt="" />
-                </th>
-              </tr>
+                <td class="td-2" style="width: 20%;"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+                <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+              </tr>        
             </table>
           </td>
         </tr>
       </table>
       <!-- Stuck! -->
-      <table class="table-3">
+      <table class="table-3" style="margin-left: 49px;">
         <tr>
           <th><b>Stuck!</b></th>
         </tr>
@@ -966,8 +915,8 @@
         be obvious. With these methods, our central backtracking method can be
         written as follows:
       </p>
-      <fieldset class="fie-5_1" style="height: 510px">
-        <pre class="pre-5">
+      <fieldset style="height: 540px; width: 380px;" >
+        <pre style="margin-left: -10%;">
             boolean solvable(int[] board) { 
               if (puzzleSolved(board)) { 
                 return true; 
@@ -1020,6 +969,7 @@
           reverse order; it is up to you, the programmer, to reverse the results
           again to get them in the correct order.
         </p>
-      </div>
+    
   </body>
 </html>
+<tr>
