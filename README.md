@@ -1,3 +1,3 @@
 # backtracking
 
-<a href="http://ajay-dhangar.io/backtracking" target="_blank">Hello, world!</a>
+<a href="http://ajay-dhangar.github.io/backtracking/" target="_blank">Live Preview</a>
