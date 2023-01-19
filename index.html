@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Backtracking</title>
-
-    <link rel="stylesheet" href="./style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
   </head>
   <body>
+    <body>
     
       <h1>Backtracking</h1>
       <p>Backtracking is a form of recursion.</p>
@@ -36,7 +36,7 @@
         be found.
       </p>
       <br />
-      <p class="example-1">This needs an example</p>
+      <p>This needs an example</p>
       <img src="./asset/image/Image_root.png" alt="">
       <ol type="1">
         <li>Starting at Root, your options are A and B. You choose A.</li>
@@ -112,8 +112,8 @@
         node, it is not solvable. This is our base case. In the above code, this
         is done by the lines
       </p>
-      <fieldset class="fie-1">
-        <pre>
+      <fieldset style="height: 150px;">
+        <pre style="margin-left: -7%;">
             if n is a leaf node { 
               if the leaf is a goal node, return true 
               else return false 
@@ -141,8 +141,8 @@
         your recursive algorithms are translated into machine or assembly
         language.
       </p>
-      <fieldset style="height: 25%;">
-        <pre style="margin-left: -2%;">
+      <fieldset style="height: 20%;">
+        <pre >
             boolean solve(Node n) { 
               put node n on the stack; 
               while the stack is not empty { 
@@ -151,8 +151,7 @@
                   else pop it off the stack 
                 } 
                 else { 
-                  if the node at the top of the stack has untried
-                   children 
+                  if the node at the top of the stack has untried children 
                   push the next untried child onto the stack 
                   else pop the node off the stack 
                 } 
@@ -291,14 +290,13 @@
         we repeat here) shows a binary tree.
       </p>
       <p>Here's a definition of the BinaryTree class:</p>
-      <fieldset >
+      <fieldset style="height: 20%;">
         <pre >
             public class BinaryTree { 
               BinaryTree leftChild = null; 
               BinaryTree rightChild = null; 
               boolean isGoalNode = false; String name; 
-              BinaryTree(String name, BinaryTree left,
-               BinaryTree right, boolean isGoalNode) { 
+              BinaryTree(String name, BinaryTree left, BinaryTree right, boolean isGoalNode) { 
                 this.name = name; 
                 leftChild = left; 
                 rightChild = right; 
@@ -311,7 +309,7 @@
         Next we will create a TreeSearch class, and in it we will define a
         method makeTree() which constructs the above binary tree.
       </p>
-      <fieldset>
+      <fieldset style="height: 19%;">
         <pre >
             static BinaryTree makeTree() { 
               BinaryTree root, a, b, c, d, e, f; 
@@ -339,17 +337,13 @@
         And finally, here's the recursive backtracking routine to "solve" the
         binary tree by finding a goal node.
       </p>
-      <fieldset>
+      <fieldset style="height: 18%;">
         <pre >
             static boolean solvable(BinaryTree node) { 
-              /* 1 */ if (node == null) 
-                          return false; 
-              /* 2 */ if (node.isGoalNode) 
-                          return true; 
-              /* 3 */ if (solvable(node.leftChild)) 
-                          return true; 
-              /* 4 */ if (solvable(node.rightChild)) 
-                        return true; 
+              /* 1 */ if (node == null) return false; 
+              /* 2 */ if (node.isGoalNode) return true; 
+              /* 3 */ if (solvable(node.leftChild)) return true; 
+              /* 4 */ if (solvable(node.rightChild)) return true; 
               /* 5 */ return false; 
             }
         </pre>
@@ -384,7 +378,7 @@
         alternative would be to check first whether each child exists, and recur
         only if they do. Here's that alternative version:
       </p>
-      <fieldset >
+      <fieldset style="height: 16%;">
         <pre >
             static boolean solvable(BinaryTree node) { 
               if (node.isGoalNode) return true; 
@@ -450,15 +444,12 @@
       </p>
       <p>Here's the code for method 1:</p>
       <fieldset style="height: 18%;">
-        <pre style="margin-left: 0;">
-            boolean explore1(int row, int column, 
-            int color) { 
+        <pre>
+            boolean explore1(int row, int column, int color) { 
               if (row >= NUM_ROWS)
               return mapIsOK(); 
               map[row][column] = color; 
-              for (int nextColor = RED; 
-              nextColor <= BLUE; 
-              nextColor++) { 
+              for (int nextColor = RED; nextColor <= BLUE; nextColor++) { 
                 int[] next=nextRowAndColumn(row, column); 
                 if(explore1(next[0],next[1],nextColor)) 
                 return true; 
@@ -470,15 +461,12 @@
       <p>And here's the code for method 2:</p>
       <fieldset style="height: 18%;">
         <pre >
-            boolean explore2(int row, int column, 
-            int color) { 
+            boolean explore2(int row, int column, int color) { 
               if (row >= NUM_ROWS)return true; 
               if (okToColor(row, column, color)) { 
                 map[row][column] = color; 
-                for(int nextColor=RED;
-                nextColor <=BLUE; nextColor++){ 
-                  int[] next = 
-                  nextRowAndColumn(row, column); 
+                for(int nextColor=RED; nextColor <=BLUE; nextColor++){ 
+                  int[] next = nextRowAndColumn(row, column); 
                   if (explore2(next[0],next[1],nextColor)) 
                   return true; 
                 } 
@@ -564,21 +552,19 @@
             } 
             static boolean yes(BinaryTree node) { 
               indent = indent.substring(3); 
-              System.out.println(indent + 
-              "solvable(" + name(node) + ") returns true"); 
+              System.out.println(indent + "solvable(" + name(node) + ") returns true"); 
               return true; 
             } 
             static boolean no(BinaryTree node) { 
               indent = indent.substring(3); 
-              System.out.println(indent + 
-              "solvable(" + name(node) + ") returns false"); 
+              System.out.println(indent + "solvable(" + name(node) + ") returns false"); 
             return false; 
           }
         </pre>
       </fieldset>
       <p>To use this code, we modify solvable as follows:</p>
-      <fieldset style="height: 30%; margin-left: 8%;">
-        <pre style="margin-left: 0">
+      <fieldset style="height: 30%;">
+        <pre>
             static boolean solvable(BinaryTree node) { 
               enter(node); 
               if (node == null) return no(node); 
@@ -590,7 +576,7 @@
         </pre>
       </fieldset>
       <p>And we get these results:</p>
-      <pre class="pre-5_1">
+      <pre>
         Entering solvable(Root) 
         | Entering solvable(A) 
         | | Entering solvable(C) 
@@ -609,8 +595,7 @@
         | Entering solvable(B) 
         | | Entering solvable(E) 
         | | solvable(E) returns true 
-        | solvable(B) returns true solvable(Root) 
-          returns true true
+        | solvable(B) returns true solvable(Root) returns true true
       </pre>
       <p style="margin-top: 26px;"><b>Trick #3: Never discard your debugging statements.</b></p>
       <p>
@@ -633,26 +618,21 @@
             static final boolean debugging = false; 
             static void enter(BinaryTree node) { 
               if (debugging) { 
-                System.out.println(indent + 
-                "Entering solvable(" + name(node) + ")"); 
+                System.out.println(indent + "Entering solvable(" + name(node) + ")"); 
                 indent = indent + "| "; 
               } 
             } 
             static boolean yes(BinaryTree node) { 
               if (debugging) { 
                 indent = indent.substring(3); 
-                System.out.println(indent + 
-                "solvable(" + name(node) + ") 
-                returns true"); 
+                System.out.println(indent +"solvable(" + name(node) + ") returns true"); 
               } 
               return true; 
             } 
             static boolean no(BinaryTree node) { 
               if (debugging) { 
                 indent = indent.substring(3); 
-                System.out.println(indent + 
-                "solvable(" + name(node) + ") 
-                returns false"); 
+                System.out.println(indent +"solvable(" + name(node) + ") returns false"); 
               } 
               return false; 
             }
@@ -688,14 +668,13 @@
         statement.
       </p>
       <fieldset  style="height: 24%; ">
-        <pre style="margin-left: 0;">
+        <pre>
             java.lang.Exception: Checkpoint Charlie 
             at TreeSearch.solvable(TreeSearch.java:53) 
             at TreeSearch.solvable(TreeSearch.java:57) 
             at TreeSearch.main(TreeSearch.java:72) 
             at __SHELL38.run(__SHELL38.java:16) 
-            at bluej.runtime.ExecServer.suspendExecution(
-              Unknown Source)
+            at bluej.runtime.ExecServer.suspendExecution(Unknown Source)
         </pre>
       </fieldset>
       <!-- <hr class="hr-1">-->
@@ -710,11 +689,11 @@
       </p>
       <table class="table-2">
         <tr>
-          <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-          <td class="td-2" style="width: 20%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-          <td class="td-2" style="width: 20%;"></td>
-          <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
-          <td class="td-2" style="width: 20%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+          <td class="td-2" ><img src="./asset/image/black-ball.png" alt="" ></td>
+          <td class="td-2" ><img src="./asset/image/black-ball.png" alt="" ></td>
+          <td class="td-2" ></td>
+          <td class="td-2" ><img src="./asset/image/white-ball.png" alt="" ></td>
+          <td class="td-2" ><img src="./asset/image/white-ball.png" alt="" ></td>
         </tr>        
       </table>
       <p>The goal is to reverse the positions of the marbles:</p>
@@ -733,8 +712,8 @@
         either:
       </p>
       <ul ">
-        <li style="height: 10%; width: 90%;">Move one space ahead, if that space is clear, or</li>
-        <li style="height: 10%; width: 90%;">
+        <li style="height: 10%; width: 85%;">Move one space ahead, if that space is clear, or</li>
+        <li style="height: 10%; width: 85%;">
           Jump ahead over exactly one marble of the opposite color, if the space
           just beyond that marble is clear.
         </li>
@@ -745,11 +724,11 @@
         <tr>
           <td><b>Starting Position:</b></td>
           <td>                    
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
             <td class="td-2" style="width: 12%;"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>                                 
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>                                 
           </td>
         </tr>
       </table>
@@ -758,11 +737,11 @@
         <tr>
           <td><b>Black moves ahead:</b></td>
           <td>            
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
             <td class="td-2" style="width: 12%;"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>              
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>              
           </td>          
         </tr>
       </table>
@@ -771,11 +750,11 @@
         <tr>
           <td><b>White jumps:</b></td>
           <td>            
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
             <td class="td-2" style="width: 12%;"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>              
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>              
           </td>
         </tr>
       </table>
@@ -784,11 +763,11 @@
         <tr>
           <td><b>Black moves ahead:</b></td>
           <td>            
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>
             <td class="td-2" style="width: 12%;"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>              
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>              
           </td>
         </tr>
       </table>
@@ -798,10 +777,10 @@
           <td><b>Black jumps:</b></td>
           <td>            
             <td class="td-2" style="width: 12%;;"></td>
-            <td class="td-2" style="width: 12%;;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>              
+            <td class="td-2" style="width: 12%;;"><img src="./asset/image/white-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;;"><img src="./asset/image/white-ball.png" alt="" ></td>              
           </td>
         </tr>
       </table>
@@ -811,10 +790,10 @@
           <td><b>Black moves ahead:</b></td>
           <td>
             <td class="td-2" style="width: 12%;"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" class="bol"></td>
-            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" class="bol"></td>              
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/black-ball.png" alt="" ></td>
+            <td class="td-2" style="width: 12%;"><img src="./asset/image/white-ball.png" alt="" ></td>              
           </td>
         </tr>
       </table>
@@ -903,17 +882,15 @@
         be obvious. With these methods, our central backtracking method can be
         written as follows:
       </p>
-      <fieldset style="height: 54%;" >
+      <fieldset>
         <pre>
             boolean solvable(int[] board) { 
               if (puzzleSolved(board)) { 
                 return true; 
               } 
-              for (int position = 0; 
-                position < BOARD_SIZE; position++) { 
+              for (int position = 0; position < BOARD_SIZE; position++) { 
                   if (canMove(board, position)) { 
-                    int[] newBoard = makeMove(board, 
-                    position); 
+                    int[] newBoard = makeMove(board, position); 
                     if (solvable(newBoard)) { 
                       printBoard(newBoard); 
                       return true; 
@@ -929,24 +906,23 @@
         printBoard with meanings that should be obvious. <br /><br />
         Here is some output from the program:
       </p>
-      <ol reversed="16" class="b-c">
-        
-        <li><pre class="pre-words">WHITE  WHITE  WHITE  _____  BLACK  BLACK  BLACK</pre></li>  
-        <li><pre class="pre-words">WHITE  WHITE  WHITE  BLACK  _____  BLACK  BLACK</pre></li>
-        <li><pre class="pre-words">WHITE  WHITE  _____  BLACK  WHITE  BLACK  BLACK</pre></li>
-        <li><pre class="pre-words">WHITE  _____  WHITE  BLACK  WHITE  BLACK  BLACK</pre></li>      
-        <li><pre class="pre-words">WHITE  BLACK  WHITE  _____  WHITE  BLACK  BLACK</pre></li>
-        <li><pre class="pre-words">WHITE  BLACK  WHITE  BLACK  WHITE  _____  BLACK</pre></li>            
-        <li><pre class="pre-words">WHITE  BLACK  WHITE  BLACK  WHITE  BLACK  _____</pre></li>   
-        <li><pre class="pre-words">WHITE  BLACK  WHITE  BLACK  _____  BLACK  WHITE</pre></li>   
-        <li><pre class="pre-words">WHITE  BLACK  _____  BLACK  WHITE  BLACK  WHITE</pre></li>   
-        <li><pre class="pre-words">_____  BLACK  WHITE  BLACK  WHITE  BLACK  WHITE</pre></li>   
-        <li><pre class="pre-words">BLACK  _____  WHITE  BLACK  WHITE  BLACK  WHITE</pre></li>   
-        <li><pre class="pre-words">BLACK  BLACK  WHITE  _____  WHITE  BLACK  WHITE</pre></li>   
-        <li><pre class="pre-words">BLACK  BLACK  WHITE  BLACK  WHITE  _____  WHITE</pre></li>   
-        <li><pre class="pre-words">BLACK  BLACK  WHITE  BLACK  _____  WHITE  WHITE</pre></li>   
-        <li><pre class="pre-words">BLACK  BLACK  _____  BLACK  WHITE  WHITE  WHITE</pre></li>           
-        <li><pre class="pre-words">BLACK  BLACK  BLACK  _____  WHITE  WHITE  WHITE</pre></li>           
+      <ol reversed="16" class="b-c">        
+        <li><p class="pre-words">WHITE &nbsp; WHITE &nbsp; WHITE &nbsp; _____ &nbsp; BLACK &nbsp; BLACK &nbsp; BLACK</p></li>  
+        <li><p class="pre-words">WHITE &nbsp; WHITE &nbsp; WHITE &nbsp; BLACK &nbsp; _____ &nbsp; BLACK &nbsp; BLACK</p></li>
+        <li><p class="pre-words">WHITE &nbsp; WHITE &nbsp; _____ &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; BLACK</p></li>
+        <li><p class="pre-words">WHITE &nbsp; _____ &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; BLACK</p></li>      
+        <li><p class="pre-words">WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; _____ &nbsp; WHITE &nbsp; BLACK &nbsp; BLACK</p></li>
+        <li><p class="pre-words">WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; _____ &nbsp; BLACK</p></li>            
+        <li><p class="pre-words">WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; _____</p></li>   
+        <li><p class="pre-words">WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; _____ &nbsp; BLACK &nbsp; WHITE</p></li>   
+        <li><p class="pre-words">WHITE &nbsp; BLACK &nbsp; _____ &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE</p></li>   
+        <li><p class="pre-words">_____ &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE</p></li>   
+        <li><p class="pre-words">BLACK &nbsp; _____ &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE</p></li>   
+        <li><p class="pre-words">BLACK &nbsp; BLACK &nbsp; WHITE &nbsp; _____ &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE</p></li>   
+        <li><p class="pre-words">BLACK &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; WHITE &nbsp; _____ &nbsp; WHITE</p></li>   
+        <li><p class="pre-words">BLACK &nbsp; BLACK &nbsp; WHITE &nbsp; BLACK &nbsp; _____ &nbsp; WHITE &nbsp; WHITE</p></li>   
+        <li><p class="pre-words">BLACK &nbsp; BLACK &nbsp; _____ &nbsp; BLACK &nbsp; WHITE &nbsp; WHITE &nbsp; WHITE</p></li>           
+        <li><p class="pre-words">BLACK &nbsp; BLACK &nbsp; BLACK &nbsp; _____ &nbsp; WHITE &nbsp; WHITE &nbsp; WHITE</p></li>           
       </ol>      
     </div>
     <div class="ex-2" >
@@ -960,5 +936,7 @@
         </p>
     
   </body>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
 </html>
-<tr>
