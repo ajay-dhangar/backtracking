@@ -147,6 +147,7 @@ b {
 .b-c li {
   color: #007eb4;
   font-style: italic;
+  font-size: 18px;
 }
 
 .pre-words {
