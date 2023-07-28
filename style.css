@@ -115,14 +115,11 @@ strong {
 b {
   color: #424242;
 }
-.table-1 {
-  margin-left: 20%;
-}
 
 .table-2 {
   margin-top: 25px;
   margin-left: 4%;
-  border: 1px solid;
+  border: 1px solid #000;
   background-color: #ededed;
 }
 .td-2 {
