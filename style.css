@@ -117,16 +117,12 @@ b {
 }
 .table-1 {
   margin-left: 25%;
-}
-.table-1,
-.td-1 {
-  border: 1px solid;
+  border: 1px solid #000;
 }
 
 .table-2 {
   margin-top: 25px;
   margin-left: 4%;
-
   border: 1px solid;
   background-color: #ededed;
 }
