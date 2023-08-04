@@ -13,7 +13,7 @@
 
 <body>
 
-  <body>
+  <div class="myBody">
 
     <h1>Backtracking</h1>
     <p>Backtracking is a form of recursion.</p>
@@ -694,19 +694,19 @@
       <tr>
         <td class="td-2 black-ball"></td>
         <td class="td-2 black-ball"></td>
-        <td class="td-2"></td>
-        <td class="td-2 white-ball.png"></td>
-        <td class="td-2 white-ball.png"></td>
+        <td class="td-2"> </td>
+        <td class="td-2 white-ball"></td>
+        <td class="td-2 white-ball"></td>
       </tr>
     </table>
     <p>The goal is to reverse the positions of the marbles:</p>
     <table class="table-2">
       <tr>
-        <td class="td-2 white-ball" ></td>
-        <td class="td-2 white-ball" ></td>
-        <td class="td-2" ></td>
-        <td class="td-2 black-ball" ></td>
-        <td class="td-2 black-ball" ></td>
+        <td class="td-2 white-ball"></td>
+        <td class="td-2 white-ball"></td>
+        <td class="td-2"></td>
+        <td class="td-2 black-ball"></td>
+        <td class="td-2 black-ball"></td>
       </tr>
     </table>
     <p style="color: #424242">
@@ -722,96 +722,88 @@
       </li>
     </ul>
     <p>For example, you could make the following sequence of moves:</p>
-    <!-- Starting position -->
-    <table class="starting-position">
-      <tr>
-        <td><b>Starting Position:</b></td>
-        <td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2"></td>
-        <td class="td-2 white-ball"></td>
-        <td class="td-2 white-ball"></td>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <!--Black moves ahead -->
-    <table class="black-moves-ahead">
-      <tr>
-        <td><b>Black moves ahead:</b></td>
-        <td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2"></td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2 white-ball"></td>
-        <td class="td-2 white-ball"></td>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <!-- White jumps -->
-    <table class="white-jumps">
-      <tr>
-        <td><b>White jumps:</b></td>
-        <td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2 white-ball"></td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2"></td>
-        <td class="td-2 white-ball"></td>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <!--Black moves ahead -->
-    <table class="black-moves-ahead">
-      <tr>
-        <td><b>Black moves ahead:</b></td>
-        <td>
-        <td class="td-2 black-ball" ></td>
-        <td class="td-2 white-ball" ></td>
-        <td class="td-2" ></td>
-        <td class="td-2 black-ball" ></td>
-        <td class="td-2 white-ball" ></td>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <!-- Black jumps-->
-    <table class="black-jump">
-      <tr>
-        <td><b>Black jumps:</b></td>
-        <td>
-        <td class="td-2"></td>
-        <td class="td-2 white-ball"></td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2 white-ball"></td>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <!-- White moves ahead-->
-    <table class="white-moves-ahead">
-      <tr>
-        <th>Black moves ahead:</th>
-        <td>
-        <td class="td-2"></td>
-        <td class="td-2 white-ball"></td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2 black-ball"></td>
-        <td class="td-2 white-ball"></td>
-        </td>
-      </tr>
-    </table>
-    <br>
-    <!-- Stuck! -->
-    <table class="stuck">
-      <tr>
-        <th><b>Stuck!</b></th>
-      </tr>
-    </table>
+
+
+    <div class="the-main-table">
+      <div class="table-data">
+        <div><b>Starting Position:</b></div>
+        <div>
+          <table class="tb-1">
+            <td class="td-2 black-ball"></td>
+            <td class="td-2 black-ball"></td>
+            <td class="td-2"></td>
+            <td class="td-2 white-ball"></td>
+            <td class="td-2 white-ball"></td>
+          </table>
+        </div>
+      </div>
+      <div class="table-data">
+        <div><b>Black moves ahead:</b></div>
+        <div>
+          <table class="tb-2">
+            <td class="td-2 black-ball"></td>
+            <td class="td-2"></td>
+            <td class="td-2 black-ball"></td>
+            <td class="td-2 white-ball"></td>
+            <td class="td-2 white-ball"></td>
+          </table>
+        </div>
+      </div>
+      <div class="table-data">
+        <div><b>White jumps:</b></div>
+        <table class="tb-3">
+          <td class="td-2 black-ball"></td>
+          <td class="td-2 white-ball"></td>
+          <td class="td-2 black-ball"></td>
+          <td class="td-2"></td>
+          <td class="td-2 white-ball"></td>
+        </table>
+      </div>
+      <div class="table-data">
+        <div>
+          <b>Black moves ahead:</b>
+        </div>
+        <div>
+          <table class="tb-4">
+            <td class="td-2 black-ball"></td>
+            <td class="td-2 white-ball"></td>
+            <td class="td-2"></td>
+            <td class="td-2 black-ball"></td>
+            <td class="td-2 white-ball"></td>
+          </table>
+        </div>
+      </div>
+      <div class="table-data">
+        <div><b>Black jumps:</b></div>
+        <div>
+          <table class="tb-5">
+            <td class="td-2"></td>
+            <td class="td-2 white-ball"></td>
+            <td class="td-2 black-ball"></td>
+            <td class="td-2 black-ball"></td>
+            <td class="td-2 white-ball"></td>
+          </table>
+        </div>
+      </div>
+      <div class="table-data">
+        <div><b>Black moves ahead:</b></div>
+        <div>
+          <table class="tb-6">
+            <td class="td-2"></td>
+            <td class="td-2 white-ball"></td>
+            <td class="td-2 black-ball"></td>
+            <td class="td-2 black-ball"></td>
+            <td class="td-2 white-ball"></td>
+          </table>
+        </div>
+      </div>
+      <div class="table-data">
+        <div><b>Stuck!</b></div>
+      </div>
+    </div>
+
+
+
     <p style="margin-top: 57px">
       The backtracking method is named solvable and returns a boolean. In
       solvable we shall need to check whether we are at a leaf, which in this
@@ -949,18 +941,18 @@
       <li><span class="pre-words">BLACK &nbsp; BLACK &nbsp; BLACK &nbsp; _____ &nbsp; WHITE &nbsp; WHITE &nbsp;
           WHITE</span></li>
     </ol>
-    </div>
-    <div class="ex-2 dem">
-      <p class="ex-3">
-        Notice that the solution is given in reverse order: BLACK starts out
-        on the left and WHITE on the right, as in the last line. I've added
-        line numbers to the actual output in order to emphasize this point.
-        Backtracking always produces its results (sequence of choices) in
-        reverse order; it is up to you, the programmer, to reverse the results
-        again to get them in the correct order.
-      </p>
+  </div>
+  <div class="ex-2 dem">
+    <p class="ex-3">
+      Notice that the solution is given in reverse order: BLACK starts out
+      on the left and WHITE on the right, as in the last line. I've added
+      line numbers to the actual output in order to emphasize this point.
+      Backtracking always produces its results (sequence of choices) in
+      reverse order; it is up to you, the programmer, to reverse the results
+      again to get them in the correct order.
+    </p>
 
-  </body>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

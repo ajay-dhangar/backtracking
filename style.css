@@ -1,4 +1,4 @@
-body {
+.myBody {
   margin-left: 8%;
   margin-right: 2%;
 }
@@ -14,6 +14,7 @@ h1 {
 p {
   margin-top: 20px;
   color: #858585;
+  width: 95%;
 }
 
 img {
@@ -54,8 +55,8 @@ h2 {
 
 .ex-2 {
   margin-top: 40px;
-  margin-right: 20%;
-  width: 85%;
+  /* margin-right: 20%; */
+  /* width: 85%; */
   height: 10%;
   background: #f8f8f8 0% 0% no-repeat padding-box;
   border: 1px solid #ededed;
@@ -70,8 +71,8 @@ h2 {
 
 fieldset {
   margin-top: 20px;
-  width: 85%;
-  height: 400px;
+  width: 95%;
+  height: auto;
   border: 1px solid #d8d8d8;
   border-radius: 10px;
   opacity: 1;
@@ -86,7 +87,7 @@ pre {
 .ex-2 {
   margin-top: 47px;
   margin-right: 29px;
-  width: 80%;
+  width: 95%;
   height: 20%;
 }
 
@@ -193,13 +194,127 @@ b {
 .black-jump,
 .white-moves-ahead,
 .stuck {
-  width: 80%;  
+  width: 80%;
 }
-.white-ball{
+
+.white-ball {
   background-image: url(./asset/image/white-ball.png);
   background-repeat: no-repeat;
+  background-size: contain;
 }
-.black-ball{
+
+.black-ball {
   background-image: url(./asset/image/black-ball.png);
   background-repeat: no-repeat;
+  background-size: contain;
 }
+
+.the-main-table {
+  width: 100%;  
+}
+
+.table-data {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  /* justify-content: center; */
+}
+
+
+.tb-1 {
+  margin-left: 27px;
+}
+
+.tb-2 {
+  margin-left: 10px;
+}
+
+.tb-3 {
+  margin-left: 58px;
+}
+
+.tb-4 {
+  margin-left: 10px;
+}
+
+.tb-5 {
+  margin-left: 62px;
+}
+
+.tb-6 {
+  margin-left: 10px;
+}
+
+/* .tb-1 td,
+.tb-2 td,
+.tb-3 td,
+.tb-4 td,
+.tb-5 td,
+.tb-5 td,
+.tb-6 td {
+  width: 50px;
+  height: 50px;
+} */
+.table-container {
+  overflow-x: auto;
+}
+table-data > div {
+  flex: 1; 
+  text-align: center; 
+  margin: 5px;
+}
+.table {
+  display: inline-block; /* Prevent table from expanding beyond content width */
+  border-collapse: collapse;
+}
+.table td {
+  width: 20%; /* Adjust cell width as needed */
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .table td {
+    width: 25%; /* Adjust cell width for smaller screens */
+  }
+}
+@media screen and (max-width: 495px) {
+  .table-data {
+    display: block;
+  }
+  .tb-1 {
+    margin-left: 0;
+  }
+  
+  .tb-2 {
+    margin-left: 0;
+  }
+  
+  .tb-3 {
+    margin-left: 0;
+  }
+  
+  .tb-4 {
+    margin-left: 0;
+  }
+  
+  .tb-5 {
+    margin-left: 0;
+  }
+  
+  .tb-6 {
+    margin-left: 0;
+  }
+}
+/* .num{
+  border-radius: 50%;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #fff;
+  background-color: #9fda1e;
+}
+.num:hover{
+  background-color: #007eb4;
+} */
