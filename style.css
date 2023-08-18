@@ -210,7 +210,10 @@ b {
 }
 
 .the-main-table {
-  width: 100%;  
+  width: 50%;  
+  margin-left: 23%;
+  /* background-color: red; */
+
 }
 
 .table-data {
